@@ -1,0 +1,1 @@
+# Projeto desenvolvido no 7º Semestre do curso de Ciência da Computação na disciplina de 'Desenvolvimento de aplicações para dispositivos móveis' ministrada pelo professor <a href="https://www.linkedin.com/in/jo%C3%A3o-carlos-pereira-ortiz-2978a411b/">João Carlos Pereira Ortiz</a>.
