@@ -1,15 +1,14 @@
 <?php 
-
     class Produtos{
 
-        private $productID, $productName, $supplierID, $categoryID, $quantityPerUnit, $uniPrice;
+        private $productID, $productName, $supplierID, $categoryID, $quantityPerUnit, $unitPrice;
 
         function getProductID(){
             return $this->productId;
         }
 
         function getProductName(){
-            return $this->ProductName;
+            return $this->productName;
         }
 
         function getSupplierID(){
@@ -25,7 +24,7 @@
         }
 
         function getUniPrice(){
-            return $this->uniPrice;
+            return $this->unitPrice;
         }
 
         //Setters
@@ -50,8 +49,8 @@
             $this->quantityPerUnit = $tmpQtdPerUnit;
         }
 
-        function setUniPrice($tmpUniPrice){
-            $this->uniPrice = $tmpUniPrice;
+        function setUniPrice($tmpUnitPrice){
+            $this->unitPrice = $tmpUnitPrice;
         }
 
         
