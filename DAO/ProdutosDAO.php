@@ -13,7 +13,7 @@
 
 			$itens = new ArrayObject();
 
-			$sqlLista = "SELECT * FROM products";
+			$sqlLista = "SELECT p.*, c.CategoryName, s.CompanyName FROM products p, categories c, suppliers s WHERE p.CategoryID = c.CategoryID AND P.SupplierID = s.SupplierID order by p.ProductID";
 
 			$rsLista = mysqli_query($vConn, $sqlLista) or die (mysqli_error($vConn));
 
@@ -28,9 +28,11 @@
 				$prod->setProductId($tblLista['ProductID']);
 				$prod->setProductName($tblLista['ProductName']);
 				$prod->setSupplierID($tblLista['SupplierID']);
-				$prod->serCategoryID($tblLista['CategoryID']);
+				$prod->setCategoryID($tblLista['CategoryID']);
 				$prod->setQtdPerUnit($tblLista['QuantityPerUnit']);
 				$prod->setUniPrice($tblLista['UnitPrice']);
+				$prod->setCategoria($tblLista['CategoryName']);
+				$prod->setFornecedor($tblLista['CompanyName']);
 
 				//adicioar objetos no array
 
@@ -76,6 +78,19 @@
 	            return $prod;
 	            
 	        }
+		}
+
+		function cadastrarProduto($tmpProduto){
+
+			$db = new ConexaoDAO();
+
+			$vConn = $db->abreConexao();
+
+			$sqlCadastro = "INSERT INTO products (ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPrice, Discontinued) VALUES ('".$tmpProduto->getProductID()."' , '".$tmpProduto->getProductName()."' , '".$tmpProduto->getSupplierID()."' , '".$tmpProduto->getCategoryID()."' , '".$tmpProduto->getQtdPerUnit()."' , '".$tmpProduto->getUnitPrice()."', 0)";
+
+			mysqli_query($vConn, $sqlCadastro) or die mysqli_error($vConn);
+
+			$vConn->fechaConexao();
 		}
 	}
  ?>

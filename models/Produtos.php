@@ -1,7 +1,7 @@
 <?php 
     class Produtos{
 
-        private $productID, $productName, $supplierID, $categoryID, $quantityPerUnit, $unitPrice;
+        private $categoria, $fornecedor, $productID, $productName, $supplierID, $categoryID, $quantityPerUnit, $unitPrice;
 
         function getProductID(){
             return $this->productId;
@@ -15,17 +15,27 @@
             return $this->supplierID;
         }
 
-        function getCategory(){
+        function getCategoryID(){
             return $this->categoryID;
         }
 
-        function getQdtPerUnity(){
+        function getQtdPerUnit(){
             return $this->quantityPerUnit;
         }
 
-        function getUniPrice(){
+        function getUnitPrice(){
             return $this->unitPrice;
         }
+
+        function getCategoria(){
+            return $this->categoria;
+        }
+
+        function getFornecedor(){
+            return $this->fornecedor;
+        }
+
+
 
         //Setters
 
@@ -41,7 +51,7 @@
             $this->supplierID = $tmpSupplierID;
         }
 
-        function serCategoryID($tmpCategoryID){
+        function setCategoryID($tmpCategoryID){
             $this->categoryID = $tmpCategoryID;
         }
 
@@ -49,8 +59,16 @@
             $this->quantityPerUnit = $tmpQtdPerUnit;
         }
 
-        function setUniPrice($tmpUnitPrice){
+        function setUnitPrice($tmpUnitPrice){
             $this->unitPrice = $tmpUnitPrice;
+        }
+
+        function setCategoria($tmpCategoria){
+            $this->categoria = $tmpCategoria;
+        }
+
+        function setFornecedor($tmpFornecedor){
+            $this->fornecedor = $tmpFornecedor;
         }
 
         
