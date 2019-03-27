@@ -30,7 +30,7 @@
 						<td><?php echo $produto->getProductName(); ?></td>
 						<td><?php echo $produto->getFornecedor(); ?></td>
 						<td><?php echo $produto->getCategoria(); ?></td>
-						<td><?php echo $produto->getQdtPerUnity(); ?></td>
+						<td><?php echo $produto->getQtdPerUnit(); ?></td>
 						<td><?php echo $produto->getUnitPrice(); ?></td>
 					</tr>
 				<?php endforeach; ?>

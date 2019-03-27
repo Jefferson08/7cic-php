@@ -1,6 +1,6 @@
 <?php 
 	
-	require_once 'models/Produtos.php';
+	require_once '../models/Produtos.php';
 	require_once 'ConexaoDAO.php';
 
 	class ProdutosDAO{
@@ -30,7 +30,7 @@
 				$prod->setSupplierID($tblLista['SupplierID']);
 				$prod->setCategoryID($tblLista['CategoryID']);
 				$prod->setQtdPerUnit($tblLista['QuantityPerUnit']);
-				$prod->setUniPrice($tblLista['UnitPrice']);
+				$prod->setUnitPrice($tblLista['UnitPrice']);
 				$prod->setCategoria($tblLista['CategoryName']);
 				$prod->setFornecedor($tblLista['CompanyName']);
 
@@ -88,7 +88,7 @@
 
 			$sqlCadastro = "INSERT INTO products (ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPrice, Discontinued) VALUES ('".$tmpProduto->getProductID()."' , '".$tmpProduto->getProductName()."' , '".$tmpProduto->getSupplierID()."' , '".$tmpProduto->getCategoryID()."' , '".$tmpProduto->getQtdPerUnit()."' , '".$tmpProduto->getUnitPrice()."', 0)";
 
-			mysqli_query($vConn, $sqlCadastro) or die mysqli_error($vConn);
+			mysqli_query($vConn, $sqlCadastro) or die (mysqli_error($vConn));
 
 			$vConn->fechaConexao();
 		}
