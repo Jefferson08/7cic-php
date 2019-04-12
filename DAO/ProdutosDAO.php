@@ -86,11 +86,11 @@
 
 			$vConn = $db->abreConexao();
 
-			$sqlCadastro = "INSERT INTO products (ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPrice, Discontinued) VALUES ('".$tmpProduto->getProductID()."' , '".$tmpProduto->getProductName()."' , '".$tmpProduto->getSupplierID()."' , '".$tmpProduto->getCategoryID()."' , '".$tmpProduto->getQtdPerUnit()."' , '".$tmpProduto->getUnitPrice()."', 0)";
+			$sqlCadastro = "INSERT INTO products (ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPrice, Discontinued) VALUES ('".$tmpProduto->getProductName()."' , '".$tmpProduto->getSupplierID()."' , '".$tmpProduto->getCategoryID()."' , '".$tmpProduto->getQtdPerUnit()."' , '".$tmpProduto->getUnitPrice()."', 0)";
 
 			mysqli_query($vConn, $sqlCadastro) or die (mysqli_error($vConn));
 
-			$vConn->fechaConexao();
+			$db->fechaConexao();
 		}
 	}
  ?>

@@ -27,7 +27,7 @@
                 $_SESSION['permission'] = $user->getPermission();    
                 $_SESSION['statusLogin'] = 1; 
                 
-                echo "<script> location.href = 'home.php' </script>";
+                echo "<script> location.href = '/7cic-php/Views/produtos.php' </script>";
             }
         } else {
             echo "<script> alert('Preencha os campos email e senha')</script>";

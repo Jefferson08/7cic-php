@@ -1,6 +1,6 @@
 <?php 
 	require_once('ConexaoDAO.php');
-	require_once('models/Fornecedores.php');
+	require_once('../models/Fornecedores.php');
 
 	class FornecedoresDAO {
 
