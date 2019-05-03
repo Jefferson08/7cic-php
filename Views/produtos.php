@@ -56,7 +56,7 @@
 						<td><?php echo $produto->getQtdPerUnit(); ?></td>
 						<td><?php echo $produto->getUnitPrice(); ?></td>
 						<td style="width: 200px;">
-							<a href="#" class="btn btn-primary">Editar</a>
+							<a href="alterarProduto.php?cod=<?php echo $produto->getProductId(); ?>" class="btn btn-primary">Editar</a>
 							<a href="#" class="btn btn-danger">Excluir</a>
 						</td>
 					</tr>

@@ -28,7 +28,7 @@
 
 						<div class="form-group">
 							<label for="">Name</label>
-							<input type="text" name="productName" id="" class="form-control" placeholder="Type product name" aria-describedby="helpId">
+							<input type="text" name="productName" id="" class="form-control" placeholder="Digite o nome do produto" aria-describedby="helpId">
 						</div>
 
 						<div class="form-group">
@@ -55,12 +55,12 @@
 
 						<div class="form-group">
 						  <label for="qtdPerUnit">Quantity per unit</label>
-						  <input type="text" name="qtdPerUnit" id="qtdPerUnit" class="form-control" placeholder="Type quantity per unit" aria-describedby="helpId">
+						  <input type="text" name="qtdPerUnit" id="qtdPerUnit" class="form-control" placeholder="Digite a quantidade por unidade" aria-describedby="helpId">
 						</div>
 
 						<div class="form-group">
 						  <label for="">Unit Price</label>
-						  <input type="text" name="unitPrice" id="" class="form-control" placeholder="Type unit price" aria-describedby="helpId">
+						  <input type="text" name="unitPrice" id="" class="form-control" placeholder="Digite o preço unitário" aria-describedby="helpId">
 						</div>
 
 						<div class="form-group">

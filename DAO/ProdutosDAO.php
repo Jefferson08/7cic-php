@@ -44,7 +44,8 @@
 			return $itens;
 		}
 
-		function visualizarProduto($tmpProductID){
+
+		function carregarProduto($tmpProductID){
 
 			$db = new ConexaoDAO();
 
@@ -52,7 +53,7 @@
 
 			$prod = new Produtos();
 
-			$sqlProd = "SELECT * FROM products WHERE ProductID = '$tmpProductID'";
+			$sqlProd = "SELECT p.*, s.*, c.* FROM products p, categories c, suppliers s WHERE p.ProductID = '$tmpProductID' AND p.CategoryID = c.CategoryID AND p.SupplierID = s.SupplierID";
 
 			$rsProd = mysqli_query($vConn, $sqlProd) or die (mysqli_error($vConn));
 
@@ -69,9 +70,11 @@
 	        	$prod->setProductId($tblProd['ProductID']);
 				$prod->setProductName($tblProd['ProductName']);
 				$prod->setSupplierID($tblProd['SupplierID']);
-				$prod->serCategoryID($tblProd['CategoryID']);
+				$prod->setCategoryID($tblProd['CategoryID']);
 				$prod->setQtdPerUnit($tblProd['QuantityPerUnit']);
-				$prod->setUniPrice($tblProd['UnitPrice']);
+				$prod->setUnitPrice($tblProd['UnitPrice']);
+				$prod->setCategoria($tblProd['CategoryName']);
+				$prod->setFornecedor($tblProd['CompanyName']);
 
 				$db->fechaConexao();
 	            
