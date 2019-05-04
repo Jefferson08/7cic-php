@@ -57,7 +57,7 @@
 						<td style="width: 300px;">
 							<a href="detalhesFornecedor.php?cod=<?php echo $fornecedor->getSupplierId(); ?>" class="btn btn-secondary">Detalhes</a>
 							<a href="#" class="btn btn-primary">Editar</a>
-							<a href="#" class="btn btn-danger">Excluir</a>
+							<a href="excluirFornecedor.php?cod=<?php echo $fornecedor->getSupplierId(); ?>" class="btn btn-danger" onclick="return confirm('Deseja realmente excluir o fornecedor <?php echo $fornecedor->getCompanyName(); ?> ?')">Excluir</a>
 						</td>
 					</tr>
 				<?php endforeach; ?>

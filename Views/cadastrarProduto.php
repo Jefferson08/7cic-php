@@ -95,7 +95,7 @@
 
 		$prodDAO->cadastrarProduto($produto);
 
-		echo "<script>location.href='produtos.php'</script>";
+		echo "<script>alert('Produto cadastrado com sucesso!!!'); location.href='produtos.php';</script>";
 
 	}
 

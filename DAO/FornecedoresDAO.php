@@ -59,5 +59,16 @@
 
 			$db->fechaConexao();
 		}
+
+		public function excluirFornecedor($tmpId){
+			$db = new ConexaoDAO();
+
+			$vConn = $db->abreConexao();
+
+			$sql = "DELETE FROM suppliers WHERE SupplierID = $tmpId";
+
+			mysqli_query($vConn, $sql) or die (mysqli_error($vConn));
+
+		}
 	}
  ?>

@@ -8,7 +8,8 @@
 
 		$prodDAO->excluirProduto($cod);
 
-		header("Location: produtos.php");
+		echo "<script>alert('Produto excluído com sucesso!!!'); location.href='produtos.php';</script>";
+
 	} else {
 		echo "Código inválido";
 	}

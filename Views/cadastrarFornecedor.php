@@ -76,7 +76,8 @@
 
 			$fornDAO->cadastrarFornecedor($fornecedor);
 
-			echo "<script>location.href='fornecedores.php'</script>";
+			echo "<script>alert('Fornecedor cadastrado!!'); location.href='fornecedores.php';</script>";
+
 		} else {
 			echo "<script>alert('Nome do fornecedor não pode ser vazio!!!');</script>";
 			echo "<script>location.href='cadastrarFornecedor.php'</script>";
