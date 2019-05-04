@@ -31,7 +31,7 @@
 
 		<hr>
 
-		<a href="cadastrarProduto.php" class="btn btn-success">Cadastrar Fornecedor</a>
+		<a href="cadastrarFornecedor.php" class="btn btn-success">Cadastrar Fornecedor</a>
 
 		<hr>
 

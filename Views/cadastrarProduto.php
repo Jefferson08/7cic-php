@@ -24,7 +24,7 @@
 				<h1>Cadastrar Produto</h1><hr>
 
 				<div class="form">
-					<form action="cadastraProdutoView.php" method="GET">
+					<form action="cadastrarProduto.php" method="GET">
 
 						<div class="form-group">
 							<label for="">Name</label>
@@ -95,7 +95,7 @@
 
 		$prodDAO->cadastrarProduto($produto);
 
-		echo "<script>location.href='produtosView.php'</script>";
+		echo "<script>location.href='produtos.php'</script>";
 
 	}
 

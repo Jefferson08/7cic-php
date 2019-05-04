@@ -5,23 +5,13 @@
 
 	$prodDAO = new ProdutosDAO();
 
-	if (!isset($_GET['type'])) {
-		$type = 0;
-	} else {
-		$type = $_GET['type'];
-	}
 
-	if (!isset($_GET['html_busca'])) {
-		$nome = "";
-	} else {
+	if (isset($_GET['html_busca'])) {
 		$nome = $_GET['html_busca'];
+		$produtos = $prodDAO->listarProdutos(1, $nome);
+	} else {
+		$produtos = $prodDAO->listarProdutos(0, "");
 	}
-
-	if ($type == 0) { //
-		$produtos = $prodDAO->listarProdutos($type, "");
-	} else if ($type == 1){
-		$produtos = $prodDAO->listarProdutos($type, $nome);		
-	} 
 
 	?>
 
@@ -59,7 +49,6 @@
 						<div class="form-group">
 							<input class="form-control" type="text" name="html_busca" placeholder="Buscar produto...">&nbsp;
 							<input class="btn btn-primary" type="submit" value="Buscar">
-							<input type="hidden" value="1" name="type">
 						</div>
 					</form>
 				</div>
@@ -90,7 +79,7 @@
 						<td style="width: 300px;">
 							<a href="detalhesProduto.php?cod=<?php echo $produto->getProductId(); ?>" class="btn btn-secondary">Detalhes</a>
 							<a href="alterarProduto.php?cod=<?php echo $produto->getProductId(); ?>" class="btn btn-primary">Editar</a>
-							<a href="#" class="btn btn-danger">Excluir</a>
+							<a href="excluirProduto.php?cod=<?php echo $produto->getProductId(); ?>" class="btn btn-danger" onclick="return confirm('Deseja realmente excluir o produto <?php echo $produto->getProductName(); ?> ?')">Excluir</a>
 						</td>
 					</tr>
 				<?php endforeach; ?>

@@ -87,7 +87,7 @@
 	        }
 		}
 
-		function cadastrarProduto($tmpProduto){
+		public function cadastrarProduto($tmpProduto){
 
 			$db = new ConexaoDAO();
 
@@ -99,5 +99,31 @@
 
 			$db->fechaConexao();
 		}
+
+		public function alterarProduto($tmpProduto){
+
+			$db = new ConexaoDAO();
+
+			$vConn = $db->abreConexao();
+
+			$sqlUpdate = "UPDATE products SET ProductName = '".$tmpProduto->getProductName()."' , SupplierID = '".$tmpProduto->getSupplierID()."' , CategoryID = '".$tmpProduto->getCategoryID()."' , QuantityPerUnit = '".$tmpProduto->getQtdPerUnit()."' , UnitPrice = '".$tmpProduto->getUnitPrice()."', Discontinued = 0 WHERE ProductID = '".$tmpProduto->getProductId()."'";
+
+			mysqli_query($vConn, $sqlUpdate) or die (mysqli_error($vConn));
+
+			$db->fechaConexao();
+			
+		}
+
+		public function excluirProduto($id){
+			$db = new ConexaoDAO();
+
+			$vConn = $db->abreConexao();
+
+			$sql = "DELETE FROM products WHERE ProductID = $id";
+
+			mysqli_query($vConn, $sql) or die (mysqli_error($vConn));
+
+		}
+
 	}
  ?>

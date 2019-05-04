@@ -16,6 +16,34 @@
 	$fornecedores = $fornDAO->listarFornecedores();
 
 	$prod=$prodDAO->carregarProduto($cod);
+
+	if (isset($_POST['acao'])) {
+		
+		$produto = new Produtos();
+
+		$nome = $_POST['productName'];
+		$fornecedor = $_POST['supplier'];
+		$categoria = $_POST['category'];
+		$quantidade = $_POST['qtdPerUnit'];
+		$preco = $_POST['unitPrice'];
+
+		$produto->setProductId($cod);
+		$produto->setProductName($nome);
+		$produto->setSupplierID($fornecedor);
+		$produto->setCategoryID($categoria);
+		$produto->setQtdPerUnit($quantidade);
+		$produto->setUnitPrice($preco);
+
+		$prodDAO = new ProdutosDAO();
+
+		$prodDAO->alterarProduto($produto);
+
+		echo "<script>alert('Produto alterado com sucesso!!!')</script>";
+
+		echo "<script>location.href='produtos.php'</script>";
+
+
+	}
  ?>
 
  <div class="container">
@@ -27,7 +55,7 @@
 	<h1>Alterar Produto</h1><hr>
 
 	<div class="form">
-		<form action="alterarProduto.php" method="GET">
+		<form action="alterarProduto.php?cod=<?php echo $prod->getProductId(); ?>" method="POST">
 
 			<div class="form-group">
 				<label for="">Name</label>

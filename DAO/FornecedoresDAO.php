@@ -47,5 +47,17 @@
 
 			return $fornecedores;
 		}
+
+		public function cadastrarFornecedor($fornecedor){
+			$db = new ConexaoDAO();
+
+			$vConn = $db->abreConexao();
+
+			$sqlCadastro = "INSERT INTO suppliers (CompanyName, ContactName, ContactTitle, Address, Phone) VALUES ('".$fornecedor->getCompanyName()."' , '".$fornecedor->getContactName()."' , '".$fornecedor->getContactTitle()."' , '".$fornecedor->getAddress()."' , '".$fornecedor->getPhone()."')";
+
+			mysqli_query($vConn, $sqlCadastro) or die (mysqli_error($vConn));
+
+			$db->fechaConexao();
+		}
 	}
  ?>

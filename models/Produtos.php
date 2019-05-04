@@ -1,7 +1,7 @@
 <?php 
     class Produtos{
 
-        private $categoria, $fornecedor, $productID, $productName, $supplierID, $categoryID, $quantityPerUnit, $unitPrice;
+        private $categoria, $fornecedor, $productId, $productName, $supplierID, $categoryID, $quantityPerUnit, $unitPrice;
 
         function getProductID(){
             return $this->productId;
