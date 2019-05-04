@@ -54,7 +54,8 @@
 						<td><?php echo $fornecedor->getContactTitle(); ?></td>
 						<td><?php echo $fornecedor->getAddress(); ?></td>
 						<td><?php echo $fornecedor->getPhone(); ?></td>
-						<td style="width: 200px;">
+						<td style="width: 300px;">
+							<a href="detalhesFornecedor.php?cod=<?php echo $fornecedor->getSupplierId(); ?>" class="btn btn-secondary">Detalhes</a>
 							<a href="#" class="btn btn-primary">Editar</a>
 							<a href="#" class="btn btn-danger">Excluir</a>
 						</td>

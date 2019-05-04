@@ -5,7 +5,7 @@
 
 	class ProdutosDAO{
 
-		function listarProdutos(){
+		function listarProdutos($tmpTipo, $tmpNome){
 
 			$db = new ConexaoDAO();
 
@@ -13,8 +13,12 @@
 
 			$itens = new ArrayObject();
 
-			$sqlLista = "SELECT p.*, c.CategoryName, s.CompanyName FROM products p, categories c, suppliers s WHERE p.CategoryID = c.CategoryID AND P.SupplierID = s.SupplierID order by p.ProductID";
-
+			if ($tmpTipo == 0) { //Lista todos os produtos
+				$sqlLista = "SELECT p.*, c.CategoryName, s.CompanyName FROM products p, categories c, suppliers s WHERE p.CategoryID = c.CategoryID AND P.SupplierID = s.SupplierID order by p.ProductID";
+			} else if ($tmpTipo == 1) { //Listagem por nome
+				$sqlLista = "SELECT p.*, c.CategoryName, s.CompanyName FROM products p, suppliers s, categories c WHERE p.productName LIKE '%$tmpNome%' AND p.CategoryID = c.CategoryID AND P.SupplierID = s.SupplierID";
+			}
+			
 			$rsLista = mysqli_query($vConn, $sqlLista) or die (mysqli_error($vConn));
 
 			while($tblLista = mysqli_fetch_array($rsLista)){
