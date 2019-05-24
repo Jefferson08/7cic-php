@@ -1,6 +1,6 @@
 <?php 
 	require_once('ConexaoDAO.php');
-	require_once('../models/Fornecedores.php');
+	require_once('../../models/Fornecedores.php');
 
 	class FornecedoresDAO {
 
@@ -48,6 +48,42 @@
 			return $fornecedores;
 		}
 
+		function carregarFornecedor($tmpSupplierID){
+
+			$db = new ConexaoDAO();
+
+			$vConn = $db->abreConexao();
+
+			$forn = new Fornecedores();
+
+			$sqlForn = "SELECT * FROM suppliers WHERE SupplierID = $tmpSupplierID";
+
+			$rsForn = mysqli_query($vConn, $sqlForn) or die (mysqli_error($vConn));
+
+			if (mysqli_num_rows($rsForn) == 0) {
+
+				$db->fechaConexao();
+
+	            return null;
+
+	        } else {
+
+	        	$tblForn = mysqli_fetch_array($rsForn);
+
+	        	$forn->setSupplierID($tblForn['SupplierID']);
+	        	$forn->setCompanyName($tblForn['CompanyName']);
+				$forn->setContactName($tblForn['ContactName']);
+				$forn->setContactTitle($tblForn['ContactTitle']);
+				$forn->setAddress($tblForn['Address']);
+				$forn->setPhone($tblForn['Phone']);
+
+				$db->fechaConexao();
+	            
+	            return $forn;
+	            
+	        }
+		}
+
 		public function cadastrarFornecedor($fornecedor){
 			$db = new ConexaoDAO();
 
@@ -69,6 +105,20 @@
 
 			mysqli_query($vConn, $sql) or die (mysqli_error($vConn));
 
+		}
+
+		public function alterarFornecedor($tmpFornecedor){
+
+			$db = new ConexaoDAO();
+
+			$vConn = $db->abreConexao();
+
+			$sqlUpdate = "UPDATE suppliers SET CompanyName = '".$tmpFornecedor->getCompanyName()."' , ContactName = '".$tmpFornecedor->getContactName()."' , ContactTitle = '".$tmpFornecedor->getContactTitle()."' , Address = '".$tmpFornecedor->getAddress()."' , Phone = '".$tmpFornecedor->getPhone()."' WHERE SupplierID = '".$tmpFornecedor->getSupplierID()."'";
+
+			mysqli_query($vConn, $sqlUpdate) or die (mysqli_error($vConn));
+
+			$db->fechaConexao();
+			
 		}
 	}
  ?>

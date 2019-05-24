@@ -1,7 +1,7 @@
 <?php 
 	
-	require_once '../DAO/ConexaoDAO.php';
-	require_once '../DAO/ProdutosDAO.php';
+	require_once '../../DAO/ConexaoDAO.php';
+	require_once '../../DAO/ProdutosDAO.php';
 
 	$prodDAO = new ProdutosDAO();
 
@@ -15,7 +15,7 @@
 
 	?>
 
-	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
 
 	<div class="container">
 
@@ -30,7 +30,10 @@
 		        <a class="nav-link" href="produtos.php">Produtos</a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="fornecedores.php">Fornecedores</a>
+		        <a class="nav-link" href="../fornecedores/fornecedores.php">Fornecedores</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="../Funcionarios/funcionarios.php">Funcionários</a>
 		      </li>
 		    </ul>
 		  </div>

@@ -1,6 +1,6 @@
 <?php 
 	
-	require_once '../models/Produtos.php';
+	require_once '../../models/Produtos.php';
 	require_once 'ConexaoDAO.php';
 
 	class ProdutosDAO{
@@ -79,6 +79,10 @@
 				$prod->setUnitPrice($tblProd['UnitPrice']);
 				$prod->setCategoria($tblProd['CategoryName']);
 				$prod->setFornecedor($tblProd['CompanyName']);
+
+				$prod->setUnitsInStock($tblProd['UnitsInStock']);
+				$prod->setUnitsOnOrder($tblProd['UnitsOnOrder']);
+				$prod->setReorderLevel($tblProd['ReorderLevel']);
 
 				$db->fechaConexao();
 	            

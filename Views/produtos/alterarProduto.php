@@ -1,8 +1,8 @@
 <?php 
-	require_once '../models/Produtos.php';
-	require_once '../DAO/ProdutosDAO.php';
-	require_once '../DAO/CategoriasDAO.php';
-	require_once '../DAO/FornecedoresDAO.php';
+	require_once '../../models/Produtos.php';
+	require_once '../../DAO/ProdutosDAO.php';
+	require_once '../../DAO/CategoriasDAO.php';
+	require_once '../../DAO/FornecedoresDAO.php';
 
 	$cod = $_GET['cod'];
 
@@ -48,7 +48,7 @@
 
  <div class="container">
 
- 	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+ 	<link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
 
 	<hr>
 

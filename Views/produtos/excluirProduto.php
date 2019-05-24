@@ -1,5 +1,5 @@
 <?php 
-	require_once '../DAO/ProdutosDAO.php';
+	require_once '../../DAO/ProdutosDAO.php';
 
 	$prodDAO = new ProdutosDAO();
 

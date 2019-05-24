@@ -1,5 +1,5 @@
 <?php 
-	require_once '../DAO/FornecedoresDAO.php';
+	require_once '../../DAO/FornecedoresDAO.php';
 
 	$fornDAO = new FornecedoresDAO();
 

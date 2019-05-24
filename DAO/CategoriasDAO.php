@@ -1,7 +1,7 @@
 <?php 
 	
 	require_once('ConexaoDAO.php');
-	require_once('../models/Categorias.php');
+	require_once('../../models/Categorias.php');
 
 	class CategoriasDAO{
 

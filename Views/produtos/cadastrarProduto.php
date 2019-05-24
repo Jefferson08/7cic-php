@@ -1,11 +1,11 @@
 <?php 
 	
-	require '../models/Produtos.php';
-	require_once '../DAO/ProdutosDAO.php';
-	require_once '../models/Categorias.php';
-	require_once '../models/Fornecedores.php';
-	require_once '../DAO/FornecedoresDAO.php';
-	require_once '../DAO/CategoriasDAO.php';
+	require '../../models/Produtos.php';
+	require_once '../../DAO/ProdutosDAO.php';
+	require_once '../../models/Categorias.php';
+	require_once '../../models/Fornecedores.php';
+	require_once '../../DAO/FornecedoresDAO.php';
+	require_once '../../DAO/CategoriasDAO.php';
 
 	$catDAO = new CategoriasDAO();
 	$fornDAO = new FornecedoresDAO();
@@ -15,7 +15,7 @@
 
 	if (!isset($_GET['acao'])) {
 		?>
-			<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+			<link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
 
 			<div class="container">
 

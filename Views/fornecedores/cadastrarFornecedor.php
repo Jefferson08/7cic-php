@@ -1,13 +1,13 @@
 <?php 
 	
-	require_once '../DAO/FornecedoresDAO.php';
-	require_once '../models/Fornecedores.php';
+	require_once '../../DAO/FornecedoresDAO.php';
+	require_once '../../models/Fornecedores.php';
 
 	$fornDAO = new FornecedoresDAO();
 
 	if (!isset($_GET['acao'])) {
 		?>
-			<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+			<link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
 
 			<div class="container">
 

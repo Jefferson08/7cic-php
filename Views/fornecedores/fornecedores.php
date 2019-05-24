@@ -1,7 +1,7 @@
 <?php 
 	
-	require_once '../DAO/ConexaoDAO.php';
-	require_once '../DAO/FornecedoresDAO.php';
+	require_once '../../DAO/ConexaoDAO.php';
+	require_once '../../DAO/FornecedoresDAO.php';
 
 	$fornDAO = new FornecedoresDAO();
 
@@ -9,7 +9,7 @@
 
 	?>
 
-	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
 
 	<div class="container">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -20,10 +20,13 @@
 		  <div class="collapse navbar-collapse" id="navbarNav">
 		    <ul class="navbar-nav">
 		      <li class="nav-item">
-		        <a class="nav-link" href="produtos.php">Produtos</a>
+		        <a class="nav-link" href="../produtos/produtos.php">Produtos</a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="fornecedores.php">Fornecedores</a>
+		        <a class="nav-link" href="../fornecedores/fornecedores.php">Fornecedores</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="../Funcionarios/funcionarios.php">Funcionários</a>
 		      </li>
 		    </ul>
 		  </div>
@@ -56,7 +59,7 @@
 						<td><?php echo $fornecedor->getPhone(); ?></td>
 						<td style="width: 300px;">
 							<a href="detalhesFornecedor.php?cod=<?php echo $fornecedor->getSupplierId(); ?>" class="btn btn-secondary">Detalhes</a>
-							<a href="#" class="btn btn-primary">Editar</a>
+							<a href="alterarFornecedor.php?cod=<?php echo $fornecedor->getSupplierId(); ?>" class="btn btn-primary">Editar</a>
 							<a href="excluirFornecedor.php?cod=<?php echo $fornecedor->getSupplierId(); ?>" class="btn btn-danger" onclick="return confirm('Deseja realmente excluir o fornecedor <?php echo $fornecedor->getCompanyName(); ?> ?')">Excluir</a>
 						</td>
 					</tr>

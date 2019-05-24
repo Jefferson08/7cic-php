@@ -1,7 +1,7 @@
 <?php 
     class Produtos{
 
-        private $categoria, $fornecedor, $productId, $productName, $supplierID, $categoryID, $quantityPerUnit, $unitPrice;
+        private $categoria, $fornecedor, $productId, $productName, $supplierID, $categoryID, $quantityPerUnit, $unitPrice, $unitsInStock, $unitsOnOrder, $reorderLevel;
 
         function getProductID(){
             return $this->productId;
@@ -33,6 +33,18 @@
 
         function getFornecedor(){
             return $this->fornecedor;
+        }
+
+        function getUnitsInStock(){
+            return $this->unitsInStock;
+        }
+
+        function getUnitsOnOrder(){
+            return $this->unitsOnOrder;
+        }
+
+        function getReorderLevel(){
+            return $this->reorderLevel;
         }
 
 
@@ -69,6 +81,18 @@
 
         function setFornecedor($tmpFornecedor){
             $this->fornecedor = $tmpFornecedor;
+        }
+
+        function setUnitsInStock($tmpUnitsInStock){
+            $this->unitsInStock = $tmpUnitsInStock;
+        }
+
+        function setUnitsOnOrder($tmpUnitsOnOrder){
+            $this->unitsOnOrder = $tmpUnitsOnOrder;
+        }
+
+        function setReorderLevel($tmpReorderLevel){
+            $this->reorderLevel = $tmpReorderLevel;
         }
 
         
